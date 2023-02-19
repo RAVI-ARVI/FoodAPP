@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 90vw;
+  margin: auto;
+  align-items: center;
+}
+.navitem > ul {
+  list-style-type: none;
+  display: flex;
+  cursor: pointer;
+}
+.navitem > ul > li {
+  margin: 10px;
+}
