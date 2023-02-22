@@ -18,3 +18,10 @@
   display: flex;
   flex-wrap: wrap;
 }
+.text {
+  /* text-overflow: wrap; */
+  /* white-space: initial; */
+  word-wrap: break-word;
+  /* max-width: :''; */
+  max-width: 250px;
+}

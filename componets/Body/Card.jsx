@@ -23,7 +23,7 @@ function Card({
       <h3>{name}</h3>
       <h4>{locality}</h4>
       <h4>{costForTwoString}</h4>
-      {/* <h4>{cuisines.join(",")}</h4> */}
+      <h4 className="text">{cuisines.join(",")}</h4>
       <h4>delevery in {deliveryTime}</h4>
       <h4>{avgRating} starts</h4>
     </div>
