@@ -25,3 +25,23 @@
   /* max-width: :''; */
   max-width: 250px;
 }
+.searchcontainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.searchcontainer .input {
+  height: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  border-color: rgb(241, 120, 120);
+  width: 1000px;
+}
+.searchcontainer .searchbtn {
+  padding: 15px;
+  background-color: rgb(202, 238, 226);
+  border: none;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+}
