@@ -33,10 +33,12 @@ function Body() {
           search
         </button>
       </div>
-      <div className="cardContainer">
-        {restaurantData?.map((item, index) => (
-          <Card {...item.data} />
-        ))}
+      <div children="cardBox">
+        <div className="cardContainer">
+          {restaurantData?.map((item, index) => (
+            <Card {...item.data} />
+          ))}
+        </div>
       </div>
     </div>
   );

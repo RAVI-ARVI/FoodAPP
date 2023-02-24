@@ -10,6 +10,11 @@
   display: flex;
   cursor: pointer;
 }
+
 .navitem > ul > li {
   margin: 10px;
+}
+.navitem > ul > li:hover {
+  /* background-color: rgba(250, 60, 158, 0.375);
+  color: white; */
 }
