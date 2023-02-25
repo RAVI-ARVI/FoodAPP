@@ -1,18 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "./styles.css";
-import { Data } from "./ConstData";
-console.log(Data, "datadfs");
-const onfilter = (serch) => {
-  const filterd = Data.filter((item) =>
-    item.data.name.toLowerCase().includes(serch.toLowerCase())
+
+const onfilter = (serch, restaurantData) => {
+  const filterd = restaurantData?.filter((item) =>
+    item?.data?.name?.toLowerCase().includes(serch.toLowerCase())
   );
-  console.log(filterd, "fdstadfsd");
+
   return filterd;
 };
 function Body() {
-  const [search, setSearch] = useState("tst");
+  const [search, setSearch] = useState("");
   const [restaurantData, setRestaurantData] = useState(Data);
+  const [filterdata, setFilterdata] = useState([]);
+
+  async function fetchRestarentData() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4369259&lng=78.4894015&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setRestaurantData(json?.data?.cards[2]?.data?.data?.cards);
+    setFilterdata(json?.data?.cards[2]?.data?.data?.cards);
+  }
+  useEffect(() => fetchRestarentData(), []);
   return (
     <div className="bodycontainer">
       <div className="searchcontainer">
@@ -26,8 +36,8 @@ function Body() {
         <button
           className="searchbtn"
           onClick={() => {
-            const fdata = onfilter(search);
-            setRestaurantData(fdata);
+            const fdata = onfilter(search, restaurantData);
+            setFilterdata(fdata);
           }}
         >
           search
@@ -35,8 +45,8 @@ function Body() {
       </div>
       <div children="cardBox">
         <div className="cardContainer">
-          {restaurantData?.map((item, index) => (
-            <Card {...item.data} />
+          {filterdata?.map((item, index) => (
+            <Card data={item?.data} />
           ))}
         </div>
       </div>
