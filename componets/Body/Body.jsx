@@ -11,7 +11,7 @@ const onfilter = (serch, restaurantData) => {
 };
 function Body() {
   const [search, setSearch] = useState("");
-  const [restaurantData, setRestaurantData] = useState(Data);
+  const [restaurantData, setRestaurantData] = useState([]);
   const [filterdata, setFilterdata] = useState([]);
 
   async function fetchRestarentData() {
