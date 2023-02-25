@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import Shimmer from "./shimmer";
 import "./styles.css";
 
 const onfilter = (serch, restaurantData) => {
@@ -18,6 +19,7 @@ function Body() {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4369259&lng=78.4894015&page_type=DESKTOP_WEB_LISTING"
     );
+
     const json = await data.json();
     setRestaurantData(json?.data?.cards[2]?.data?.data?.cards);
     setFilterdata(json?.data?.cards[2]?.data?.data?.cards);
@@ -45,9 +47,11 @@ function Body() {
       </div>
       <div children="cardBox">
         <div className="cardContainer">
-          {filterdata?.map((item, index) => (
-            <Card data={item?.data} />
-          ))}
+          {filterdata.length === 0 ? (
+            <Shimmer />
+          ) : (
+            filterdata?.map((item, index) => <Card data={item?.data} />)
+          )}
         </div>
       </div>
     </div>
