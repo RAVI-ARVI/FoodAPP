@@ -1,15 +1,16 @@
 import React from "react";
 import "./styles.css";
 
-function Card({
-  name,
-  locality,
-  cloudinaryImageId,
-  cuisines,
-  deliveryTime,
-  avgRating,
-  costForTwoString,
-}) {
+function Card({ data }) {
+  const {
+    name,
+    locality,
+    cloudinaryImageId,
+    cuisines,
+    deliveryTime,
+    avgRating,
+    costForTwoString,
+  } = data;
   return (
     <div className="cardbox">
       <div className="card">
@@ -22,7 +23,7 @@ function Card({
           className="img"
         />
         <h3>{name}</h3>
-        <h4 className="text">{cuisines.join(",")}</h4>
+        <h4 className="text">{cuisines?.join(", ")}</h4>
         <div className="cardFlex">
           <h5 className="rating">{avgRating} </h5>
           {/* <h4>{locality}</h4> */}

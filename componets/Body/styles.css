@@ -1,5 +1,5 @@
 .bodycontainer {
-  width: 85vw;
+  width: 90vw;
   margin: auto;
 }
 .img {
@@ -35,9 +35,9 @@
 .text {
   margin: 5px;
   color: rgb(81, 81, 81);
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   font-size: 13px;
-  max-width: 260px;
+  /* max-width: 260px; */
 }
 .searchcontainer {
   display: flex;
