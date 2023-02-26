@@ -14,15 +14,21 @@ function Header() {
       <div className="navitem">
         <ul>
           <li>
-            <Link to={"/"}>home</Link>
+            <Link to={"/"} className="link">
+              home
+            </Link>
           </li>
 
           <li>
-            <Link to={"/about"}>about </Link>
+            <Link to={"/about"} className="link">
+              about{" "}
+            </Link>
           </li>
 
           <li>
-            <Link to={"/contact"}>contact</Link>
+            <Link to={"/contact"} className="link">
+              contact
+            </Link>
           </li>
         </ul>
       </div>
