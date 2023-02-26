@@ -3,20 +3,27 @@
   margin: auto;
 }
 .img {
-  width: 300px;
-  height: 200px;
+  width: 250px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
 }
+.link {
+  text-decoration: none;
+}
 .card {
   /* border: 1px solid black; */
-  max-width: 300px;
+  width: 250px;
   padding: 30px;
   border-radius: 10px;
   border: 1px solid #ffffff;
   /* margin: 30px; */
 }
-
+.shimmer {
+  width: 200px;
+  height: 200px;
+  background-color: lightgrey;
+}
 .card:hover {
   cursor: pointer;
   /* background-color: red; */

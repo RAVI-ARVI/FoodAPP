@@ -1,3 +1,9 @@
+export const swiggy_api_URL =
+  "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
+export const swiggy_menu_api_URL =
+  "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=";
+const test =
+  "https://www.swiggy.com/dapi/menu/v4/full?lat=17.4369259&lng=78.4894015&menuId=4320";
 export const Data = [
   {
     type: "restaurant",
