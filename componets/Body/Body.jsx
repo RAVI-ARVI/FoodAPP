@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Shimmer from "./shimmer";
 import "./styles.css";
-
+import { Link } from "react-router-dom";
 const onfilter = (serch, restaurantData) => {
   const filterd = restaurantData?.filter((item) =>
     item?.data?.name?.toLowerCase().includes(serch.toLowerCase())
@@ -14,17 +14,20 @@ function Body() {
   const [search, setSearch] = useState("");
   const [restaurantData, setRestaurantData] = useState([]);
   const [filterdata, setFilterdata] = useState([]);
-
+  useEffect(() => {
+    fetchRestarentData();
+  }, [search]);
   async function fetchRestarentData() {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4369259&lng=78.4894015&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
+    console.log(json);
     setRestaurantData(json?.data?.cards[2]?.data?.data?.cards);
     setFilterdata(json?.data?.cards[2]?.data?.data?.cards);
   }
-  useEffect(() => fetchRestarentData(), []);
+
   return (
     <div className="bodycontainer">
       <div className="searchcontainer">

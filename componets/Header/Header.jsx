@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 const Logo = () => (
   <img
@@ -11,11 +12,18 @@ function Header() {
     <div className="nav">
       <Logo />
       <div className="navitem">
-        {" "}
         <ul>
-          <li>home</li>
-          <li>about</li>
-          <li>contact</li>
+          <li>
+            <Link to={"/"}>home</Link>
+          </li>
+
+          <li>
+            <Link to={"/about"}>about </Link>
+          </li>
+
+          <li>
+            <Link to={"/contact"}>contact</Link>
+          </li>
         </ul>
       </div>
     </div>
