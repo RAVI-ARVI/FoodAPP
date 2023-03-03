@@ -5,6 +5,9 @@
   margin: auto;
   align-items: center;
 }
+.logo {
+  width: 150px;
+}
 .navitem > ul {
   list-style-type: none;
   display: flex;

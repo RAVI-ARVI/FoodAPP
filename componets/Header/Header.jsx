@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 const Logo = () => (
   <img
-    src="https://www.logodesign.net/assets/images/new-ui/logo.png"
+    src="https://raw.githubusercontent.com/RAVI-ARVI/Food-hub/12af356a09ad882683a5fe9c2419cdff253ad47e/img/logo.svg"
     alt="logo"
+    className="logo"
   />
 );
 function Header() {
@@ -28,6 +29,11 @@ function Header() {
           <li>
             <Link to={"/contact"} className="link">
               contact
+            </Link>
+          </li>
+          <li>
+            <Link to={"/profile"} className="link">
+              Profile
             </Link>
           </li>
         </ul>

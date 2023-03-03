@@ -4,22 +4,12 @@ import { useEffect, useState } from "react";
 import Shimmer from "../Body/shimmer";
 import "./styles.css";
 import MenuCard from "./MenuCard";
+import useGetRestarents from "../../Utils/useGetRestarents";
 function RestarentDetailes() {
   const { id } = useParams();
-  const [restaurantData, setRestaurantData] = useState(null);
-  async function fetchRestarentDetailes() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=17.4369259&lng=78.4894015&menuId=" +
-        id
-    );
-    const json = await data.json();
-    setRestaurantData(json?.data);
-  }
-  console.log(restaurantData, "tjis");
-  useEffect(() => {
-    fetchRestarentDetailes();
-  }, []);
 
+  const restaurantData = useGetRestarents(id);
+  console.log(restaurantData, "resdata");
   return !restaurantData ? (
     <Shimmer />
   ) : (
