@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Shimmer from "./shimmer";
-import "./styles.css";
+
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
 import ParentClass from "./Parent";
@@ -43,17 +43,17 @@ function Body() {
     return <h1>Your offline</h1>;
   }
   return (
-    <div className="bodycontainer">
-      <div className="searchcontainer">
+    <div className="mt-3">
+      <div className="p-2 m-3">
         <input
           name="search"
           placeholder="serch resurarent"
           value={search}
-          className="input"
+          className="w-5/12  focus:bg-green-200 p-2 m-2"
           onChange={(e) => setSearch(e.target.value)}
         />
         <button
-          className="searchbtn"
+          className="p-2 m-2 bg-purple-900 hover:bg-gray-500 text-white rounded-md"
           onClick={() => {
             const fdata = onfilter(search, restaurantData);
             setFilterdata(fdata);
@@ -62,10 +62,10 @@ function Body() {
           search
         </button>
       </div>
-      <div children="cardBox">
+      <div>
         {/* <ParentClass /> */}
 
-        <div className="cardContainer">
+        <div className="flex flex-wrap ">
           {filterdata.length === 0 ? (
             <Shimmer />
           ) : (

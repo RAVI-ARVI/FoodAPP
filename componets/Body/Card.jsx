@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+
 import { Link } from "react-router-dom";
 function Card({ data }) {
   const {
@@ -14,7 +14,7 @@ function Card({ data }) {
   } = data;
   return (
     <Link to={"/restaurant/" + id} className="link">
-      <div className="cardbox">
+      <div className="w-52 p-3 m-2 shadow-lg  ">
         <div className="card">
           <img
             src={
