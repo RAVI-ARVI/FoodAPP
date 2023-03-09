@@ -1,13 +1,16 @@
 import React from "react";
 import {useDispatch} from 'react-redux'
-import { addItem } from "../../Utils/cartSlice";
+import { addItem, removeItem } from "../../Utils/cartSlice";
 
-function MenuCard(data) {
+function CartItems(data) {
   const { cloudinaryImageId, category, name, price, defaultPrice }=data
 const dispatch=useDispatch()
   const handleAddItem=(data)=>{
-    console.log(data)
+  
    dispatch(addItem(data))
+  }
+  const handleRemoveItem=(data)=>{
+dispatch(removeItem(data))
   }
   if (!price & !defaultPrice) return;
   return (
@@ -30,12 +33,15 @@ const dispatch=useDispatch()
           <div className="w-48"></div>
         )}
 
-        <button className="absolute bottom-3 left-16 text-green-600 font-semibold bg-white p-2 rounded-md hover:bg-green-300" onClick={()=>handleAddItem(data)}>
+        <button className="absolute bottom-2 left-2 text-green-600 font-semibold bg-white p-2 rounded-md hover:bg-green-300" onClick={()=>handleAddItem(data)}>
           ADD +
+        </button>
+        <button className="absolute bottom-2 right-1 text-red-500 font-semibold bg-white p-2 rounded-md hover:bg-green-300" onClick={()=>handleRemoveItem(data)}>
+          Remove +
         </button>
       </div>
     </div>
   );
 }
 
-export default MenuCard;
+export default CartItems;

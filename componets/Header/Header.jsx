@@ -11,7 +11,7 @@ const Logo = () => (
 );
 function Header() {
   const cartItem=useSelector((store)=>store.cart.items)
-  console.log(cartItem,"this is cart items")
+ 
   return (
     <div className="flex justify-between items-center shadow-md">
       <Logo />

@@ -10,6 +10,7 @@ import Contact from "./componets/Pages/Contact";
 import RestarentDetailes from "./componets/Pages/RestarentDetailes";
 import Profile from "./componets/Body/Profile";
 import store from "./Utils/store";
+import Cart from "./componets/Pages/Cart";
 const About = lazy(() => import("./componets/Pages/About"));
 function AppLayOut() {
   return (
@@ -50,6 +51,10 @@ const appRouter = createBrowserRouter([
         path: "/profile",
         element: <Profile />,
       },
+      {
+        path:'/cart',
+        element:<Cart/>
+      }
     ],
   },
 ]);
