@@ -5,18 +5,19 @@ import Header from "./componets/Header";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import PageNotFound from "./componets/Pages/PageNotFound";
 // import About from "./componets/Pages/About";
-
+import {Provider} from 'react-redux'
 import Contact from "./componets/Pages/Contact";
 import RestarentDetailes from "./componets/Pages/RestarentDetailes";
 import Profile from "./componets/Body/Profile";
+import store from "./Utils/store";
 const About = lazy(() => import("./componets/Pages/About"));
 function AppLayOut() {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       {/* <h3>foooter</h3> */}
-    </>
+    </Provider>
   );
 }
 const appRouter = createBrowserRouter([
