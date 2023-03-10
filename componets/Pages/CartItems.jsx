@@ -33,12 +33,12 @@ dispatch(removeItem(data))
           <div className="w-48"></div>
         )}
 
-        <button className="absolute bottom-2 left-2 text-green-600 font-semibold bg-white p-2 rounded-md hover:bg-green-300" onClick={()=>handleAddItem(data)}>
+        {/* <button className="absolute bottom-2 left-2 text-green-600 font-semibold bg-white p-2 rounded-md hover:bg-green-300" onClick={()=>handleAddItem(data)}>
           ADD +
         </button>
         <button className="absolute bottom-2 right-1 text-red-500 font-semibold bg-white p-2 rounded-md hover:bg-green-300" onClick={()=>handleRemoveItem(data)}>
           Remove +
-        </button>
+        </button> */}
       </div>
     </div>
   );

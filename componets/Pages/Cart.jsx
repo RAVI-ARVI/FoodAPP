@@ -1,12 +1,19 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
-import CartItems from './CartItems'
+import {useDispatch, useSelector} from 'react-redux'
+import { cleateItem} from "../../Utils/cartSlice";
+import CartItems from './CartItems';
 
 function Cart() {
     const items=useSelector((store)=>store.cart.items)
-    console.log(items,"this items at the cart")
+    const dispatch=useDispatch()
+    const handleRemoveItems=()=>{
+      dispatch(cleateItem())
+    }
   return (
     <div>
+    <button className=" text-red-500 font-semibold bg-white p-2 rounded-md m-3" onClick={()=>handleRemoveItems()}>
+          Cleare All
+        </button>
       {items?.map((item)=><CartItems {...item} key={item.id}   />)}
     </div>
   )
