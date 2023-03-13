@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {useSelector}from 'react-redux'
 
 const Logo = () => (
   <img
@@ -9,6 +10,8 @@ const Logo = () => (
   />
 );
 function Header() {
+  const cartItem=useSelector((store)=>store.cart.items)
+ 
   return (
     <div className="flex justify-between items-center shadow-md">
       <Logo />
@@ -34,6 +37,11 @@ function Header() {
         <li>
           <Link to={"/profile"} className="p-3">
             Profile
+          </Link>
+        </li>
+        <li>
+          <Link to={"/cart"} className="p-3">
+        Cart-Item{cartItem.length}
           </Link>
         </li>
       </ul>
